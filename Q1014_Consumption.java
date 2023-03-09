@@ -6,8 +6,6 @@ public class Q1014_Consumption {
         int distance = in.nextInt();
         double fuel  = in.nextDouble();
         double consumption = distance/fuel;
-        System.out.printf("%f.3 km/l\n",consumption);
-
-       
+        System.out.printf("%.3f km/l\n",consumption);
     }
 }
