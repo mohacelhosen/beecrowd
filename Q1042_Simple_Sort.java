@@ -30,7 +30,5 @@ public class Q1042_Simple_Sort {
        System.out.println(b);
        System.out.println(c);
 
-
-
     }
 }
