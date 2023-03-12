@@ -6,7 +6,7 @@ public class Q1044_Multiples {
         int a = in.nextInt();
         int b = in.nextInt();
 
-        if(b/a==0){
+        if(b%a==0 || a%b==0){
             System.out.println("Sao Multiplos");
         }else{
             System.out.println("Nao sao Multiplos");
