@@ -1,52 +1,33 @@
-
-
 import java.util.Scanner;
 
- class Q1047_Game_Time_with_Minutes {
+public class Q1047_Game_Time_with_Minutes {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int sth = in.nextInt();
-        int stm = in.nextInt();
-        int eth = in.nextInt();
-        int etm = in.nextInt();
-        int gth = 0;
-        int gtm = 0;
+        Scanner sc = new Scanner(System.in);
 
+        int startHour = sc.nextInt();
+        int startMinute = sc.nextInt();
+        int endHour = sc.nextInt();
+        int endMinute = sc.nextInt();
 
+        int duration = 0;
 
-        if(sth==eth ){
-            gth=24;
-            if(stm==etm){
-                gtm=0;
-            }else if(stm>etm){
-                gtm=(60-stm)+etm;
-            }else{
-                gtm=etm-stm;
+        if (startHour == endHour && startMinute == endMinute) {
+            duration = 24 * 60;
+        } else {
+            if (endHour < startHour || (endHour == startHour && endMinute < startMinute)) {
+                endHour += 24;
             }
 
-        }else if(sth>eth){
-            gth=(24-sth)+eth;
-            if(stm>etm){
-                gtm=(60-stm)+etm;
-            }else if(stm==etm){
-                gtm=0;
-            }else{
-                gtm=etm-stm;
-            }
-        }else{
-            gth=eth-sth;
-            int temp =++sth;
-            if((temp)==eth) gth=0;
-            if((temp)==eth && stm==etm){ gth=1; gtm=0;};
-            if(stm>etm){
-
-                gtm=(60-stm)+etm;
-            }else{
-                gtm=etm-stm;
-            }
-
+            int startInMinutes = startHour * 60 + startMinute;
+            int endInMinutes = endHour * 60 + endMinute;
+            duration = endInMinutes - startInMinutes;
         }
 
-        System.out.printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)",gth,gtm);
+        int durationHours = duration / 60;
+        int durationMinutes = duration % 60;
+
+        System.out.printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", durationHours, durationMinutes);
+
+        sc.close();
     }
 }
