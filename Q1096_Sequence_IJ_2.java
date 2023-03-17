@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Q1095_Sequence_IJ_2 {
+public class Q1096_Sequence_IJ_2 {
  public static void main(String[] args) throws IOException {
    
     for(int i=1; i<=9; i+=2){
