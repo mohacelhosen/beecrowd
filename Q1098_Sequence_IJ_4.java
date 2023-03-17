@@ -13,3 +13,4 @@ public class Q1098_Sequence_IJ_4 {
         }
     }
 }
+
