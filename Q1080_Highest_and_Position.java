@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Q1080_Highest_and_Position {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int[] numbers = new int[5];
-        for(int i=0; i<5; i++){
+        int[] numbers = new int[100];
+        for(int i=0; i<numbers.length; i++){
             numbers[i]=in.nextInt();
         }
         
@@ -16,6 +16,7 @@ public class Q1080_Highest_and_Position {
         for(int i = 0; i<numbers.length; i++){
             if(numbers[i]==large){
                 System.out.printf("%d\n%d\n",large,i+1);
+                break;
             }
         }
         
